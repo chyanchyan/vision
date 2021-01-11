@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'widgets/_back_wrapper.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <!-- Donut Chart -->
+
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">机构类型分布</h6>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body">
+            <div class="chart-pie pt-4">
+                <canvas id="crt_ins_type"></canvas>
+            </div>
+            <hr>
+            Comments
+        </div>
+
+
+    <script src="{% static 'themes/sb_admin_2/js/demo/chart-pie-demo.js' %}"></script>
+
+</body>
+{% endblock %}
+</html>
