@@ -1,0 +1,784 @@
+﻿<!doctype html>
+<html class="no-js " lang="en">
+<head>
+<meta charset="utf-8">
+    <title>:: Falcon - Admin Dashboard ::</title>
+    <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- vendor css files -->
+    <link rel="stylesheet" href="assets/js/vendor/bootstrap/bootstrap.min.css">    
+    <link rel="stylesheet" href="assets/css/vendor/animsition.min.css">
+    <!-- project main css files -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+    ol li{ padding: 7px 0;}
+    p{line-height: 27px;}
+    </style>
+</head>
+
+<body id="falcon" class="main_Wrapper">
+    <div id="wrap" class="animsition">
+        <div id="header">
+            <header class="clearfix">
+                <!-- Branding -->
+                <div class="branding">
+                    <a class="brand" href="index.html">
+                        <span>Falcon</span>
+                    </a>
+                    <a role="button" tabindex="0" class="offcanvas-toggle visible-xs-inline">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <!-- Branding end -->
+
+                <!-- Left-side navigation -->
+                <ul class="nav-left pull-left list-unstyled list-inline">
+                    <li class="leftmenu-collapse">
+                        <a role="button" tabindex="0" class="collapse-leftmenu">
+                            <i class="fa fa-outdent"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Left-side navigation end -->
+                <div class="search" id="main-search">
+                    <input type="text" class="form-control underline-input" placeholder="Explore Falcon...">
+                </div>
+                <!-- Search end -->
+
+                <!-- Right-side navigation -->
+                <ul class="nav-right pull-right list-inline">
+                    <li class="dropdown nav-profile">
+                        <a href class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="assets/images/profile-photo.jpg" alt="" class="0 size-30x30"> </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <div class="user-info">
+                                    <div class="user-name">Alexander</div>
+                                    <div class="user-position online">Available</div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="profile.html" role="button" tabindex="0">
+                                    <span class="label label-success pull-right">80%</span>
+                                    <i class="fa fa-user"></i>Profile</a>
+                            </li>
+                            <li>
+                                <a role="button" tabindex="0">
+                                    <span class="label label-info pull-right">new</span>
+                                    <i class="fa fa-check"></i>Tasks</a>
+                            </li>
+                            <li>
+                                <a role="button" tabindex="0">
+                                    <i class="fa fa-cog"></i>Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="locked.html" role="button" tabindex="0">
+                                    <i class="fa fa-lock"></i>Lock</a>
+                            </li>
+                            <li>
+                                <a href="login.html" role="button" tabindex="0">
+                                    <i class="fa fa-sign-out"></i>Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown users">
+                        <a href class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-th"></i>
+                        </a>
+                        <div class="dropdown-menu pull-right with-arrow panel panel-default" role="menu">
+                            <ul class="app-sortcut">
+                                <li>
+                                    <a href="#" class="connection-item">
+                                        <i class="fa  fa-umbrella"></i>
+                                        <span class="block">weather</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="drive.html" class="connection-item">
+                                        <i class="fa fa-cloud-upload"></i>
+                                        <span class="block">Drive</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="calendar.html" class="connection-item">
+                                        <i class="fa fa-calendar-check-o"></i>
+                                        <span class="block">calendar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="maps-google.html" class="connection-item">
+                                        <i class="fa fa-map-o"></i>
+                                        <span class="block">map</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="chat.html" class="connection-item">
+                                        <i class="fa fa-comments-o"></i>
+                                        <span class="block">chat</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="connection-item">
+                                        <i class="fa fa-book"></i>
+                                        <span class="block">contact</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="dropdown messages">
+                        <a href class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope"></i>
+                            <div class="notify">
+                                <span class="heartbit"></span>
+                                <span class="point"></span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu pull-right with-arrow panel panel-default" role="menu">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object thumb thumb-sm">
+                                            <img src="assets/images/pi-avatar.jpg" alt="" class=""> </span>
+                                        <div class="media-body">
+                                            <span class="block">Lucas sent you a message</span>
+                                            <small class="text-muted">9 minutes ago</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object  thumb thumb-sm">
+                                            <img src="assets/images/Jane-avatar.jpg" alt="" class=""> </span>
+                                        <div class="media-body">
+                                            <span class="block">Jane sent you a message</span>
+                                            <small class="text-muted">27 minutes ago</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object  thumb thumb-sm">
+                                            <img src="assets/images/random-avatar1.jpg" alt="" class=""> </span>
+                                        <div class="media-body">
+                                            <span class="block">Lee sent you a message</span>
+                                            <small class="text-muted">2 hour ago</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object  thumb thumb-sm">
+                                            <img src="assets/images/random-avatar3.jpg" alt="" class=""> </span>
+                                        <div class="media-body">
+                                            <span class="block">Rihtik sent you a message</span>
+                                            <small class="text-muted">8 hours ago</small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a role="button" tabindex="0">Show all messages
+                                    <i class="pull-right fa fa-angle-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown notifications">
+                        <a href class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell"></i>
+                            <div class="notify">
+                                <span class="heartbit"></span>
+                                <span class="point"></span>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu pull-right with-arrow panel panel-default">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object media-icon">
+                                            <i class="fa fa-ban"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="block">User Lucas cancelled account</span>
+                                            <small class="text-muted">12 minutes ago</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object media-icon">
+                                            <i class="fa fa-spotify"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="block">2 voice mails</span>
+                                            <small class="text-muted">Neque porro quisquam est</small>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a role="button" tabindex="0" class="media">
+                                        <span class="pull-left media-object media-icon">
+                                            <i class="fa fa-whatsapp"></i>
+                                        </span>
+                                        <div class="media-body">
+                                            <span class="block">8 voice messanger</span>
+                                            <small class="text-muted">8 texts</small>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="panel-footer">
+                                <a role="button" tabindex="0">Show all notifications
+                                    <i class="fa fa-angle-right pull-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="toggle-right-leftmenu">
+                        <a role="button" tabindex="0">
+                            <i class="fa fa-align-left"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- Right-side navigation end -->
+            </header>
+        </div>
+        <div id="controls">
+            <!--SIDEBAR Content -->
+            <aside id="leftmenu">
+                <div id="leftmenu-wrap">
+                    <div class="panel-group slim-scroll" role="tablist">
+                        <div class="panel panel-default">
+                            <div id="leftmenuNav" class="panel-collapse collapse in" role="tabpanel">
+                                <div class="panel-body">
+                                    <!--  NAVIGATION Content -->
+                                    <ul id="navigation">
+                                        <li class="active open"><a href="#documenter_cover"><i class="fa fa-arrow-right"></i><span>Start </span></a></li>
+                                        <li><a href="#overview"><i class="fa fa-arrow-right"></i><span>Overview</span></a></li>
+                                        <li><a href="#features"><i class="fa fa-arrow-right"></i><span>Features</span></a></li>
+                                        <li><a href="#template"><i class="fa fa-arrow-right"></i><span>Template</span></a></li>
+                                        <li><a href="#main_menu"><i class="fa fa-arrow-right"></i><span>Main Menu</span></a></li>
+                                        <li><a href="#grunt_file"><i class="fa fa-arrow-right"></i><span>Grunt File</span></a></li>
+                                        <li><a href="#main_content"><i class="fa fa-arrow-right"></i><span>Main Content</span></a></li>            
+                                        <li><a href="#folder_structure"><i class="fa fa-arrow-right"></i><span>Folder Structure</span></a></li>
+                                        <li><a href="#css"><i class="fa fa-arrow-right"></i><span>CSS</span></a></li>
+                                        <li><a href="#javascript"><i class="fa fa-arrow-right"></i><span>Javascript</span></a></li>
+                                        <li><a href="#fonts"><i class="fa fa-arrow-right"></i><span>Fonts</span></a></li>            
+                                        <li><a href="#thank_you"><i class="fa fa-arrow-right"></i><span>THANK YOU!</span></a></li>
+                                    </ul>
+                                    <!--/ NAVIGATION Content -->
+                                </div>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </aside>
+            <!--/ SIDEBAR Content -->
+
+            <!--RIGHTBAR Content -->
+            <aside id="rightmenu">
+                <div role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">Chat</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#todo" aria-controls="todo" role="tab" data-toggle="tab">Todo</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="chat">
+                            <div class="search">
+                                <div class="form-group is-empty">
+                                    <input type="text" class="form-control underline-input" placeholder="Search...">
+                                    <span class="material-input"></span>
+                                </div>
+                            </div>
+                            <h6>Recent</h6>
+                            <ul>
+                                <li class="online">
+                                    <div class="media">
+                                        <a class="pull-left thumb thumb-sm" role="button" tabindex="0">
+                                            <img class="media-object " src="assets/images/pi-avatar.jpg" alt=""> </a>
+                                        <div class="media-body">
+                                            <span class="name">Claire Sassu</span>
+                                            <span class="message">Can you share the...</span>
+                                            <span class="badge badge-outline status"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="online">
+                                    <div class="media">
+                                        <a class="pull-left thumb thumb-sm" role="button" tabindex="0">
+                                            <img class="media-object " src="assets/images/John-avatar.jpg" alt=""> </a>
+                                        <div class="media-body">
+                                            <div class="media-body">
+                                                <span class="name">Maggie jackson</span>
+                                                <span class="message">Can you share the...</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="online">
+                                    <div class="media">
+                                        <a class="pull-left thumb thumb-sm" role="button" tabindex="0">
+                                            <img class="media-object " src="assets/images/Jane-avatar.jpg" alt=""> </a>
+                                        <div class="media-body">
+                                            <div class="media-body">
+                                                <span class="name">Joel King</span>
+                                                <span class="message">Ready for the meeti...</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h6>Contacts</h6>
+                            <ul>
+                                <li class="offline">
+                                    <div class="media">
+                                        <a class="pull-left thumb thumb-sm" role="button" tabindex="0">
+                                            <img class="media-object " src="assets/images/random-avatar4.jpg" alt=""> </a>
+                                        <div class="media-body">
+                                            <div class="media-body">
+                                                <span class="name">Joel King</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="online">
+                                    <div class="media">
+                                        <a class="pull-left thumb thumb-sm" role="button" tabindex="0">
+                                            <img class="media-object " src="assets/images/random-avatar5.jpg" alt=""> </a>
+                                        <div class="media-body">
+                                            <div class="media-body">
+                                                <span class="name">Joel King</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="offline">
+                                    <div class="media">
+                                        <a class="pull-left thumb thumb-sm" role="button" tabindex="0">
+                                            <img class="media-object " src="assets/images/random-avatar6.jpg" alt=""> </a>
+                                        <div class="media-body">
+                                            <div class="media-body">
+                                                <span class="name">Joel King</span>
+                                                <span class="badge badge-outline status"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="todo">
+                            <div class="form-group">
+                                <input type="text" value="" placeholder="Create new task..." class="form-control" />
+                                <span class="fa fa-plus"></span>
+                            </div>
+                            <h6>Today</h6>
+                            <ul class="todo-list">
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"> Initialize the project</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"> Create the main structure</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"> Create the main structure</label>
+                                    </div>
+                                </li>
+                            </ul>
+                            <h6>Tomorrow</h6>
+                            <ul class="todo-list">
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"> Initialize the project</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"> Create the main structure</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsCheckboxes"> displayed in a normal space!</label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="settings">
+                            <h6>Chat Settings</h6>
+                            <ul class="settings">
+                                <li>
+                                    <div class="form-group">
+                                        <label class="col-xs-8 control-label">Show Offline Users</label>
+                                        <div class="col-xs-4 control-label text-right">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" checked="">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <label class="col-xs-8 control-label">Show Fullname</label>
+                                        <div class="col-xs-4 control-label text-right">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <label class="col-xs-8 control-label">History Enable</label>
+                                        <div class="col-xs-4 control-label text-right">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" checked="">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <label class="col-xs-8 control-label">Show Locations</label>
+                                        <div class="col-xs-4 control-label text-right">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox" checked="">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <label class="col-xs-8 control-label">Notifications</label>
+                                        <div class="col-xs-4 control-label text-right">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="form-group">
+                                        <label class="col-xs-8 control-label">Show Undread Count</label>
+                                        <div class="col-xs-4 control-label text-right">
+                                            <div class="togglebutton">
+                                                <label>
+                                                    <input type="checkbox">
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--/ RIGHTBAR Content -->
+        </div>
+        <section id="content">
+            <div class="page dashboard-page">
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="documenter_cover">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan">Start <strong>Falcon</strong></h3>
+                            </div>
+                            <div class="boxs-body">
+                                <h3>Falcon - Bring your Dashboard Panel to life.</h3>
+                                    <ul>
+                                    <li>Created: 11/12/2017</li>
+                                    <li>latest Update: 11/12/2017</li>
+                                    <li>Chekout our Product at: <a href="http://www.bootstrapmb.com/">bootstrapmb.com</a></li>							
+                              
+                                </ul>
+                                <p>Thank you for purchasing our template. If you have any questions that are beyond the scope of this help file, please feel free to email at thememakker@gmail.com</p>
+                                <p>Thanks so much! (Please don't forgot to rate it )</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="overview">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-blue"><strong>Brief</strong> Overview</h3>
+                            </div>
+                            <div class="boxs-body">
+                                <p>Falcon is premium admin dashboard powered with AngularJS. It’s builded on popular Twitter Bootstrap v3 framework. Falcon is fully based on<strong> HTML5 + CSS3 standards</strong>. Is fully responsive and clean on every device and every browser.</p>
+                                <p>Any new improvements which you’ll like to see in next build are welcome, <strong>please let us know what you want to be added. And don’t forget to rate this item if you like it</strong></p>
+                                <p>Falcon Admin includes many plugins implemented in 50+ separate HTML files. It is designed to be a complete admin panel for any web project.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="features">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-blush"><strong>Features</strong></h3>
+                            </div>
+                            <div class="boxs-body">
+                                <ol class="features">
+                                    <li>Built in <strong>SASS</strong></li>
+                                    <li>Built with Bootstrap 3X</li>
+                                    <li>JS Bundling Ready (<strong>Bundle</strong>)</li>
+                                    <li><strong>Material Kit added</strong></li>
+                                    <li><strong>RTL</strong> layout</li>
+                                    <li>Boxed layout</li>
+                                    <li>Profile Page</li>
+                                    <li><strong>Chat</strong> App</li>
+                                    <li>Fully Responsive & Interactive</li>
+                                    <li>Elegant & Clean User Interface</li>
+                                    <li>Expanded and Collapsed Menu (Multi Menu Levels)</li>
+                                    <li>Responsive Tables</li>
+                                    <li>Form Wizard</li>
+                                    <li>IOS type Switches</li>
+                                    <li>File Dropzone (Drag and Drop Upload)</li>
+                                    <li>Invoice</li>
+                                    <li>Messenger Notifications</li>
+                                    <li>Image Cropper</li>
+                                    <li>Grid Based System</li>
+                                    <li>404, 500 Error Pages</li>
+                                    <li><strong>Calendar</strong> integration</li>
+                                    <li>Detailed Documentation</li>
+                                    <li><strong>Many Charts</strong> Options</li>
+                                    <li>Validation Forms</li>
+                                    <li>Lots of ready to use Plugins.</li>
+                                    <li>Google & Vector Maps</li>
+                                    <li>Organized Folder Structure</li>
+                                    <li>Works well in all latest browsers like chrome, Firefox, Opera, Safari, IE9+</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="template">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>Template</strong></h3>
+                            </div>
+                            <div class="boxs-body">
+                                <p>The template consist of following components as show in image below:</p>
+                                <ol>
+                                    <li>Main boxs-header Top Bar - Consist of logo, toggle options like the chat , messages, notifications, search,</li>
+                                    <li>Side bar -user profile shortcuts,  Consist of user image and details, Main menu, Bar Graph Widgets</li>
+                                    <li>Content boxs-body</li>
+                                    <li>Right Bar - Consist of groups and Contact Users for instant messaging. Click on user opens the chat window with that user.</li>
+                                </ol>						
+                                <p> <img alt="" src="assets/images/1.png" class="img-responsive"></p>
+                                <h3>HTML Structre</h3>
+                                <h4>Page Head</h4>
+                                <p> <img alt="" src="assets/images/html.png" class="img-responsive"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="main_menu">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-amber"><strong>Main</strong> Menu</h3>
+                            </div>
+                            <div class="boxs-body">
+                                <img alt="" src="assets/images/2.png" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="grunt_file">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-amber"><strong>Grunt</strong> File</h3>
+                            </div>
+                            <div class="boxs-body">
+                                <img alt="" src="assets/images/4.png" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="main_content">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>Main</strong> Content</h3>
+                            </div>
+                            <div class="boxs-body">
+        <pre class="html" id="line1">
+            &lt;!-- START CONTENT --&gt;
+            &lt;section id="content"&gt;
+                &lt;div class="page dashboard-page"&gt;
+    
+                &lt;div class='col-lg-12 col-md-12 col-sm-12 col-xs-12'&gt;
+                    &lt;div class="page-title"&gt;
+                        ...               
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="clearfix"&gt;&lt;/div&gt;
+                
+                &lt;div class="col-lg-12"&gt;
+                    &lt;section class="box "&gt;
+                        ...
+                    &lt;/section&gt;
+                &lt;/div&gt;
+    
+                &lt;/div&gt;
+            &lt;/section&gt;
+            &lt;!-- END CONTENT --&gt;
+        </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>		
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="folder_structure">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>Folder</strong> Structure</h3>
+                            </div>
+                            <div class="boxs-body">
+    <pre class="prettyprint"><span class="pln">HTML</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">├──</span><span class="pln"> assets</span><span class="pun">/</span><span class="pln">
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> bundles<span class="pun">/</span>
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> css<span class="pun">/</span>
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> extras<span class="pun">/</span>
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> fonts<span class="pun">/</span>
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> images<span class="pun">/</span>
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> js<span class="pun">/</span>
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> </span><span class="pun">├──</span><span class="pln"> Page<span class="pun">/</span>              
+    </span><span class="pun">│</span><span class="pln">   </span><span class="pun">├──</span><span class="pln"> sass<span class="pun">/</span>
+    </span><span class="pun">└──</span><span class="pln"> css</span><span class="pun">/</span>    
+    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="css">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>CSS</strong> Structure</h3>
+                            </div>
+                            <div class="boxs-body">
+                                <p>main.css is the main CSS file located in assets/css/ folder of the package. Whole CSS file is well indexed with topic and its related code.</p>
+                                <p class="m-b-30">Also animate.min.css file is found in this folder. It has all the animation classes for various elements.</p>
+                                <img alt="" src="assets/images/6.png" style="max-width: 100%;margin-right:50px;vertical-align:top;margin-bottom:30px;">
+                                <img alt="" src="assets/images/7.png" style="max-width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="javascript">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>Javascript</strong></h3>
+                            </div>
+                            <div class="boxs-body">
+                                <p>Falcon main.js is the mail javascript file having all the js code. File is located in assets/js/ folder. This file code is also well formatted and section in different respective function names.</p>
+                                <p class="m-b-30">Along with this chart library based js code and dashboard based js code are added in separate files for ease of use of user.</p>
+                                <p> <img alt="" src="assets/images/8.png" style="max-width: 100%;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="fonts">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>Font</strong> Used</h3>
+                            </div>
+                            <div class="boxs-body">
+                                <p>Google fonts are used in the template. They are as follows: <a href="https://fonts.google.com/specimen/Poppins">Poppins</a></p>
+                                <p>iconic Font: <a href="http://fontawesome.io/icons/">Fontawesome</a></p>
+                                <p>All Images are used: <a href="https://www.pexels.com/">Pexels.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="boxs" id="thank_you">
+                            <div class="boxs-header">
+                                <h3 class="custom-font hb-cyan"><strong>THANK</strong> YOU!</h3>
+                            </div>
+                            <div class="boxs-body">
+                                <p> Once again, thank you so much for purchasing this template. As I said at the beginning, I&#39;d be glad to help you if you have any questions relating to this template.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>
+        </section>
+    </div>
+    <!-- Vendor JavaScripts -->
+    <script src="assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/bundles/vendorscripts.bundle.js"></script>
+        
+    <script src="assets/bundles/mainscripts.bundle.js"></script> <!-- Custom Js -->    
+    
+    <script>
+        
+        $('#leftmenu #navigation li').click(function(){
+            var $this = $(this);
+            if(!$this.is('active open'))
+            {
+                $('#leftmenu #navigation li').removeClass('active open').removeData("top");
+                $this.addClass('active open').data("top", $this.offset().top);
+            }
+        });
+
+        var $root = $('html, body');
+        $('a[href^="#"]').click(function() {
+            var href = $.attr(this, 'href');
+
+            $root.animate({
+                scrollTop: $(href).offset().top
+            }, 700, function () {
+                window.location.hash = href;
+            });
+
+            return false;
+        });
+                
+    </script>
+</boxs-body>
+</html>
