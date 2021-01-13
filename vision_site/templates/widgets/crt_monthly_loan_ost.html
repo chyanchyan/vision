@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends './_card_back_wrapper.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    {% block title %}
+        本年月度助信贷余额
+    {% endblock %}
+
+    {% block div %}
+        <div class="chart-area">
+            <canvas id="crt_monthly_loan_ost"></canvas>
+        </div>
+    {% endblock %}
+
+    {% block comments %}
+        Comments
+    {% endblock %}
+    <!-- Page level plugins -->
+    <script src="{% static 'themes/sb_admin_2/vendor/chart.js/Chart.min.js' %}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{% static 'js/crt_monthly_loan_ost.js' %}"></script>
+
+</body>
+{% endblock %}
+</html>

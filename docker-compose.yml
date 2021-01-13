@@ -15,7 +15,7 @@ x-app-variables: &app-variables
 
 services:
   website:
-    image: :latest
+    image: vision:latest
     command: python manage.py runserver 0.0.0.0:8000
     volumes: *service-volumes
     environment: *app-variables
@@ -26,7 +26,7 @@ services:
 
 
   db_migrate:
-    image: :latest
+    image: vision:latest
     command: python manage.py migrate
     volumes: *service-volumes
     environment: *app-variables

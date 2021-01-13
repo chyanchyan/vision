@@ -1,5 +1,5 @@
 build:
-	docker build --force-rm $(options) -t scsite:latest .
+	docker build --force-rm $(options) -t vision:latest .
 
 build-prod:
 	$(MAKE) build options="--target production"
