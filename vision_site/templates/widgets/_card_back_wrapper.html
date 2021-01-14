@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
 
-
-<body>
+{% block content %}
     <div class="card shadow mb-4">
         <!-- Card Header - Dropdown -->
         <div class="card-header py-3">
@@ -20,6 +18,6 @@
             {% endblock %}
         </div>
     </div>
-
-</body>
-</html>
+    {% block js %}
+    {% endblock %}
+{% endblock %}

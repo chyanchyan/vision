@@ -7,4 +7,5 @@ urlpatterns = [
     path('', include('vision_site.apps.public.urls')),
     path('accounts/', include('vision_site.apps.accounts.urls')),
     path('data_monitor/', include('vision_site.apps.data_monitor.urls')),
+    path('data_widget/', include('vision_site.apps.data_widget.urls')),
 ]

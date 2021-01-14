@@ -3,8 +3,10 @@ Chart.defaults.global.defaultFontFamily = 'Nunito',
     '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-var LABELS = ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var DATA = [1, 1, 2, 3, 5, 8, 13, 21];
+var LABELS = document.currentScript.getAttribute('date_time');
+var DATA = document.currentScript.getAttribute('amount');
+console.log(LABELS)
+console.log(DATA)
 var ID = "crt_monthly_loan_ost";
 
 
@@ -84,7 +86,7 @@ var myLineChart = new Chart(ctx, {
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '￥' + number_format(value) + '亿';
+            return '￥' + number_format(value);
           }
         },
         gridLines: {

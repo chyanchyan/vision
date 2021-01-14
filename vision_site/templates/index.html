@@ -14,7 +14,13 @@ home
     Template Homepage
 </h1>
 
-{% include 'widgets/crt_monthly_loan_ost.html' %}
-{% include 'widgets/bar_chart.html' %}
+<div class="row">
+    <div class="col-xl-4 col-lg-4">
+        {% include 'widgets/crt_monthly_loan_ost.html' %}
+    </div>
+    <div class="col-xl-4 col-lg-4">
+        {% include 'widgets/bar_chart.html' %}
+    </div>
+</div>
 
 {% endblock %}

@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'vision_site.apps.public',
     'vision_site.apps.accounts',
     'vision_site.apps.data_monitor',
-    'livereload',
+    'vision_site.apps.data_widget',
+    'vision_site.apps.cash_flow',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +61,8 @@ ROOT_URLCONF = 'vision_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(PROJECT_DIR, 'templates')],
+        'DIRS': [os.path.join(PROJECT_DIR, 'templates'),
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

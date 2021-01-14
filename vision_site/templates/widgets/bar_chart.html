@@ -4,25 +4,21 @@
 {% extends 'widgets/_card_back_wrapper.html' %}
 {% load static %}
 
-{% block content %}
-<body>
-    <!-- Bar Chart -->
-    {% block title %}
-        xx机构新增信贷余额
-    {% endblock %}
-
-    {% block div %}
-        <div class="chart-bar">
-            <canvas id="myBarChart"></canvas>
-        </div>
-    {% endblock %}
-
-    {% block comments %}
-        Comments
-    {% endblock %}
-
-    <script src="{% static 'themes/sb_admin_2/js/demo/chart-bar-demo.js' %}"></script>
-
-</body>
+<!-- Bar Chart -->
+{% block title %}
+    cash flow impact
 {% endblock %}
-</html>
+
+{% block div %}
+    <div class="chart-bar">
+        <canvas id="myBarChart"></canvas>
+    </div>
+{% endblock %}
+
+{% block comments %}
+    Comments
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'themes/sb_admin_2/js/demo/chart-bar-demo.js' %}"></script>
+{% endblock %}
