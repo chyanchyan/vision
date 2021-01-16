@@ -7,4 +7,4 @@ class CashFlow(models.Model):
     comments = models.CharField(max_length=500)
 
     class Meta:
-        db_table = 'cash_flow'
+       db_table = 'cash_flow'

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'vision_site.apps.data_monitor',
     'vision_site.apps.data_widget',
     'vision_site.apps.cash_flow',
+    'vision_site.apps.docs',
 ]
 
 MIDDLEWARE = [

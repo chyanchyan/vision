@@ -14,12 +14,34 @@
 
         <span>|</span>
 
-        {% url 'public:data_monitor' as data_monitor_url %}
+        {% url 'data_monitor:data_monitor' as data_monitor_url %}
         <span>
             {% if request.path == data_monitor_url %}
                 DataMonitor
             {% else %}
                 <a href="{{ data_monitor_url }}">DataMonitor</a>
+            {% endif %}
+        </span>
+
+        <span>|</span>
+
+        {% url 'control_panel:control_panel' as control_panel_url %}
+        <span>
+            {% if request.path == control_panel_url %}
+                ControlPanel
+            {% else %}
+                <a href="{{ control_panel_url }}">ControlPanel</a>
+            {% endif %}
+        </span>
+
+        <span>|</span>
+
+        {% url 'docs:docs' as docs_url %}
+        <span>
+            {% if request.path == docs_url %}
+                Documentary
+            {% else %}
+                <a href="{{ docs_url }}">Documentary</a>
             {% endif %}
         </span>
 
