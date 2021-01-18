@@ -3,11 +3,7 @@ from django.http import HttpResponse
 
 
 def index(req: HttpResponse) -> HttpResponse:
-    return render(req, 'index.html')
-
-
-def data_monitor(req: HttpResponse) -> HttpResponse:
-    return render(req, 'data_monitor.html')
+   return render(req, 'index.html')
 
 
 def uploading(req: HttpResponse) -> HttpResponse:
@@ -24,3 +20,12 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+
+# def index(req: HttpResponse) -> HttpResponse:
+#     template_name = 'index.html'
+#     data = CashFlow.objects.all()
+#     context = {'data': data
+#                }
+#
+#     return render(req, template_name, context=context)

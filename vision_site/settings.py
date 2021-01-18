@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'vision_site.apps.pages',
     'vision_site.apps.public',
     'vision_site.apps.accounts',
     'vision_site.apps.data_monitor',
     'vision_site.apps.data_widget',
     'vision_site.apps.cash_flow',
+    'vision_site.apps.docs',
 ]
 
 MIDDLEWARE = [

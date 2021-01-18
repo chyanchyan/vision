@@ -1,12 +1,21 @@
 from django.shortcuts import render
 from .models import CashFlow
 from django.core import serializers
+from django.http import HttpResponse
 
 
-def CashFlowView(req):
+def cash_flow_view(req: HttpResponse) -> HttpResponse:
     template_name = 'widgets/crt_monthly_loan_ost.html'
-    date_time = CashFlow.objects
-    amount = CashFlow.objects.values('amount')
-    data = serializers.serialize('json', date_time)
-    data2 = serializers.serialize('json', amount)
-    return render(req, template_name, {'date_time': date_time, 'amount': data2})
+    table_name = req.GET['table_name']
+    if table_name:
+        try:
+            sql = 'select * from %s' % table_name
+            data = serializers.serialize("json", CashFlow.objects.raw(sql))
+            context = {'data': data
+                       }
+        except:
+            context = {'data': 'table name doesnt exist'}
+    else:
+        context = {'data': 'table name is empty'}
+
+    return render(req, template_name, context=context)
