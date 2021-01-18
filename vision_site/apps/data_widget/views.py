@@ -9,7 +9,7 @@ def cash_flow_view(req: HttpResponse) -> HttpResponse:
     table_name = req.GET['table_name']
     if table_name:
         try:
-            sql = 'select * from %s' % table_name
+            sql = 'select * from %s order by date_time' % table_name
             data = serializers.serialize("json", CashFlow.objects.raw(sql))
             context = {'data': data
                        }

@@ -3,5 +3,5 @@ from . import views
 
 app_name = 'docs'
 urlpatterns = [
-    path(r'/^(\d+)/$', views.Docs, name='docs')
+    path('', views.Docs, name='docs')
 ]

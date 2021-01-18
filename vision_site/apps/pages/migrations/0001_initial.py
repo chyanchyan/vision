@@ -12,15 +12,13 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='CashFlow',
+            name='Page',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date_time', models.DateTimeField(auto_now=True)),
-                ('amount', models.BigIntegerField()),
-                ('comments', models.CharField(blank=True, max_length=500)),
+                ('title', models.CharField(max_length=100)),
+                ('permalink', models.CharField(max_length=12, unique=True)),
+                ('update_date', models.DateTimeField(verbose_name='Last Updated')),
+                ('bodytext', models.TextField(blank=True, verbose_name='Page Content')),
             ],
-            options={
-                'db_table': 'cash_flow',
-            },
         ),
     ]
