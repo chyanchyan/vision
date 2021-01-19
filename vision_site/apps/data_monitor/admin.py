@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import *
 
-# Register your models here.
+
+admin.site.register(InsAlias)
+admin.site.register(InsType)
+admin.site.register(Ins)
+admin.site.register(Account)
+admin.site.register(CashFlow)

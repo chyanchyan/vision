@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Page
+from .models import Page, ExternalLink
 
 # Create your views here.
 
 
-def index(req, page_name):
+def page_view(req, page_name):
     page_name = '/' + page_name
     pg = get_object_or_404(Page, permalink=page_name)
     context = {
@@ -16,6 +16,8 @@ def index(req, page_name):
 
     # assert False
 
-    return render(req, 'pages/page.html', context=context)
-
-
+    if page_name == '/':
+        context['external_links'] = ExternalLink.objects.all()
+        return render(req, 'pages/homepage.html', context=context)
+    else:
+        return render(req, 'pages/page.html', context=context)
