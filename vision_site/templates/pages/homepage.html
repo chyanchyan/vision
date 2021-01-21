@@ -6,26 +6,16 @@
     {{ title }}
 {% endblock title %}
 
-{% block content %}
-    {% autoescape off %}
 
+{% block content %}
+
+    {% autoescape off %}
         {{ content }}
 
-        <hr>
-        <h3>
-            Data platform links：
-        </h3>
-        {% for link in external_links %}
-            <h5>
-                <a href="{{ link.link }}" target="_blank">
-                    {{ link.title }}
-                </a>
-            </h5>
-        {% endfor %}
     {% endautoescape %}
     <hr>
     <p>
         Page last updated: {{ last_updated|date:"D d F Y" }}
     </p>
-{% endblock content %}
 
+{% endblock content %}

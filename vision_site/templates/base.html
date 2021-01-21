@@ -26,28 +26,31 @@
     <link href="{% static 'themes/sb_admin_2/css/sb-admin-2.min.css' %}" rel="stylesheet">
 
 </head>
-<body>
-    {% include 'navbar.html' %}
-    <nav id="nav">
-        <ul>
-            {% block sidenav %}
-            {% endblock sidenav %}
-        </ul>
-    </nav>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{% static 'themes/sb_admin_2/vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'themes/sb_admin_2/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<body id="page-top">
+    <div id="wrapper">
 
-    <!-- Core plugin JavaScript-->
-    <script src="{% static 'themes/sb_admin_2/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+        {% include 'sidebar.html' %}
 
-    <!-- Custom scripts for all pages-->
-    <script src="{% static 'themes/sb_admin_2/js/sb-admin-2.min.js' %}"></script>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
 
+                {% include 'navbar.html' %}
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript-->
+        <script src="{% static 'themes/sb_admin_2/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'themes/sb_admin_2/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+        <!-- Core plugin JavaScript-->
+        <script src="{% static 'themes/sb_admin_2/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+        <!-- Custom scripts for all pages-->
+        <script src="{% static 'themes/sb_admin_2/js/sb-admin-2.min.js' %}"></script>
+    </div>
 </body>
 </html>
