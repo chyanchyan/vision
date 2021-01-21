@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+    {% autoescape off %}
+        <!--loop all widgets-->
+        {% for widget in widgets %}
+
+        {% endfor %}
+    {% endautoescape %}
+    <hr>
+    <p>
+        Page last updated: {{ last_updated|date:"D d F Y" }}
+    </p>
+{% endblock content %}
