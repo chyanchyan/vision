@@ -20,5 +20,10 @@
 {% endblock %}
 
 {% block js %}
-<script src="{% static 'themes/sb_admin_2/js/demo/chart-bar-demo.js' %}"></script>
+<!-- Page level plugins -->
+<script src="{% static 'themes/sb_admin_2/vendor/chart.js/Chart.min.js' %}"></script>
+
+<script src="{% static 'js/chart-bar-demo.js' %}"
+        data="{{ data_bar_chart }}">
+</script>
 {% endblock %}

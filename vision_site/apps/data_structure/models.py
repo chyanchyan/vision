@@ -1,13 +1,6 @@
 from django.db import models
 
 
-class Data(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-
-    def __str__(self):
-        return self.title
-
-
 class InsAlias(models.Model):
     alias = models.CharField(max_length=200, unique=True)
 
@@ -44,7 +37,10 @@ class CashFlow(models.Model):
     date_time = models.DateTimeField(auto_now=True)
     amount = models.DecimalField(max_digits=20, decimal_places=2)
     account = models.OneToOneField(Account, on_delete=models.SET_NULL, blank=True, null=True)
-    comments = models.CharField(max_length=500, blank=True)
+    comments = models.CharField(max_length=500, blank=True, null=True)
+
+    class Meta:
+        db_table = 'data_structure_cashflow'
 
     def __str__(self):
         return 'cash flow: %s' % str(self.date_time)

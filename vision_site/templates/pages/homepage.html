@@ -11,9 +11,15 @@
 
     {% autoescape off %}
         {{ content }}
-
     {% endautoescape %}
+
     <hr>
+
+    {% include '../widgets/crt_monthly_loan_ost.html' %}
+    {% include '../widgets/bar_chart.html' %}
+
+    <hr>
+
     <p>
         Page last updated: {{ last_updated|date:"D d F Y" }}
     </p>
