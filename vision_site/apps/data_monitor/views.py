@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from ..data_structure.models import Data
 
 
-def monitor_view(req, page_name):
+def monitor_view(req):
 
     table_name = req.GET['table_name']
     if table_name:
