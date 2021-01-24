@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Page, ExternalLink
+from .models import *
 
 
 # Register your models here.
@@ -10,5 +10,6 @@ class PageAdmin(admin.ModelAdmin):
     search_fields = ('title', )
 
 
+admin.site.register(DataWidget)
 admin.site.register(Page)
 admin.site.register(ExternalLink)

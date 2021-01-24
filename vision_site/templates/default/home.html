@@ -1,0 +1,14 @@
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}
+
+    <hr>
+
+    <p>
+        Page last updated: {{ last_updated|date:"D d F Y" }}
+    </p>
+
+{% endblock content %}
