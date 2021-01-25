@@ -10,9 +10,9 @@ def page_view(req, page_name):
     pg = get_object_or_404(Page, permalink=page_name)
     widgets = model_to_dict(Page.objects.get(permalink=page_name))['widgets']
     data = {
-        'data_' + value.split(':')[1].strip():
-            serializers.serialize("json", eval('%s.objects.all()' % value.split(':')[0].strip()))
-        for value in widgets.split(',')
+        'data_' + value.name:
+            serializers.serialize("json", eval('%s.objects.all()' % value.class_name))
+        for value in widgets
     }
 
     context = {
