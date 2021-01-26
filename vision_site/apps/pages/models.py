@@ -4,11 +4,13 @@ from django.db import models
 
 
 class DataWidget(models.Model):
-    name = models.CharField(max_length=1000, unique=True)
-    class_name = models.CharField(max_length=50, null=True)
+    title = models.CharField(max_length=50, unique=True, null=True)
+    js_name = models.CharField(max_length=1000, unique=True)
+    data_structure_model_name = models.CharField(max_length=50, null=True)
+    comments = models.TextField('Page Content', blank=True)
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Page(models.Model):

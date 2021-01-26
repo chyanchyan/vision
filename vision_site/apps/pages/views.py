@@ -9,10 +9,15 @@ def page_view(req, page_name):
     page_name = '/' + page_name
     pg = get_object_or_404(Page, permalink=page_name)
     widgets = model_to_dict(Page.objects.get(permalink=page_name))['widgets']
-    data = {
-        'data_' + value.name:
-            serializers.serialize("json", eval('%s.objects.all()' % value.class_name))
-        for value in widgets
+    widgets = {
+        widget.js_name:
+            {'data': serializers.serialize("json", eval('%s.objects.all()' % widget.data_structure_model_name)),
+             'title': widget.title,
+             'js_name': widget.js_name,
+             'data_structure_model_name': widget.data_structure_model_name,
+             'comments': widget.comments,
+             }
+        for widget in widgets
     }
 
     context = {
@@ -20,10 +25,8 @@ def page_view(req, page_name):
         'content': pg.bodytext,
         'last_updated': pg.update_date,
         'page_list': Page.objects.all(),
+        'widgets': widgets
     }
-
-    for key, value in data.items():
-        context[key] = value
 
     # assert False
 

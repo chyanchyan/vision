@@ -4,14 +4,14 @@ Chart.defaults.global.defaultFontFamily = 'Nunito',
 Chart.defaults.global.defaultFontColor = '#858796';
 
 var INPUT = JSON.parse(document.currentScript.getAttribute('data'));
+var ID = JSON.parse(document.currentScript.getAttribute('id'));
+
 var DATA = []
 var LABELS = []
 for (var i = 0; i < INPUT.length; i++){
-    DATA.push(INPUT[i].fields['amount'])
-    LABELS.push(INPUT[i].fields['date_time'])
+    DATA.push(INPUT['data'][i].fields[0])
+    LABELS.push(INPUT['data'][i].fields[1])
 };
-
-var ID = "crt_monthly_loan_ost";
 
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');

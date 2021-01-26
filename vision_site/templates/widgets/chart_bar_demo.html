@@ -4,17 +4,19 @@
 {% load static %}
 
 {% block title %}
-    {{ widgets.crt_monthly_loan_ost.title }}
+
+{{widgets.chart_bar_demo.data}}
+    {{ widgets.chart_bar_demo.title }}
 {% endblock title %}
 
 {% block div %}
     <div class="chart-area">
-        <canvas id="{{ widgets.crt_monthly_loan_ost.js_name }}"></canvas>
+        <canvas id="{{ widgets.chart_bar_demo.js_name }}"></canvas>
     </div>
 {% endblock %}
 
 {% block comments %}
-    {{ widgets.crt_monthly_loan_ost.comments }}
+    {{ widgets.chart_bar_demo.comments }}
 {% endblock comments %}
 
 {% block js %}
@@ -22,8 +24,9 @@
 <script src="{% static 'themes/sb_admin_2/vendor/chart.js/Chart.min.js' %}"></script>
 
 <!-- Page level custom scripts -->
-<script src="{% static 'js/'|add:widgets.crt_monthly_loan_ost.js_name|add:'.js' %}"
-        data="{{ widgets.crt_monthly_loan_ost.data }}">
+<script src="{% static 'js/'|add:widgets.chart_bar_demo.js_name|add:'.js' %}"
+        data="{{ widgets.chart_bar_demo.data }}">
 </script>
 
 {% endblock js %}
+

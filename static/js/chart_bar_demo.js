@@ -11,7 +11,7 @@ for (var i = 0; i < INPUT.length; i++){
     LABELS.push(INPUT[i].fields['date_time'])
 };
 
-var ID = "myBarChart";
+var ID = "chart_bar_demo";
 
 function number_format(number, decimals, dec_point, thousands_sep) {
   // *     example: number_format(1234.56, 2, ',', ' ');

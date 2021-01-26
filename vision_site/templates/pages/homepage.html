@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     {{ title }}
@@ -16,8 +17,6 @@
     <hr>
 
     {% include '../widgets/crt_monthly_loan_ost.html' %}
-    {% include '../widgets/bar_chart.html' %}
-
     <hr>
 
     <p>
