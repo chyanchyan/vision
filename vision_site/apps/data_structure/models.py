@@ -52,3 +52,4 @@ class Balance(models.Model):
 
     def __str__(self):
         return 'balance: %s' % str(self.date_time)
+

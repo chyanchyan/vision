@@ -3,14 +3,20 @@ Chart.defaults.global.defaultFontFamily = 'Nunito',
     '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+
+function date_format(date) {
+  date = (date + '').split('T')
+  return date[0]
+}
+
 var INPUT = JSON.parse(document.currentScript.getAttribute('data'));
-var ID = JSON.parse(document.currentScript.getAttribute('id'));
+var ID = document.currentScript.getAttribute('chart_id');
 
 var DATA = []
 var LABELS = []
 for (var i = 0; i < INPUT.length; i++){
-    DATA.push(INPUT['data'][i].fields[0])
-    LABELS.push(INPUT['data'][i].fields[1])
+    DATA.push(INPUT[i].fields['amount'])
+    LABELS.push(date_format(INPUT[i].fields['date_time']))
 };
 
 function number_format(number, decimals, dec_point, thousands_sep) {
@@ -37,6 +43,7 @@ function number_format(number, decimals, dec_point, thousands_sep) {
   }
   return s.join(dec);
 }
+
 
 // Area Chart Example
 var ctx = document.getElementById(ID);

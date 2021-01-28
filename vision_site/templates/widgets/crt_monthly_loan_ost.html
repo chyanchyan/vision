@@ -22,8 +22,10 @@
 <script src="{% static 'themes/sb_admin_2/vendor/chart.js/Chart.min.js' %}"></script>
 
 <!-- Page level custom scripts -->
-<script src="{% static 'js/'|add:widgets.crt_monthly_loan_ost.js_name|add:'.js' %}"
-        data="{{ widgets.crt_monthly_loan_ost.data }}">
+<script src="{% static 'js/line_chart.js' %}"
+        data="{{ widgets.crt_monthly_loan_ost.data }}"
+        chart_id="{{ widgets.crt_monthly_loan_ost.js_name }}">
+
 </script>
 
 {% endblock js %}

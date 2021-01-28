@@ -3,12 +3,18 @@ Chart.defaults.global.defaultFontFamily = 'Nunito',
     '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
+function date_format(date) {
+  date = (date + '').split('T')
+  return date[0]
+}
+
+
 var INPUT = JSON.parse(document.currentScript.getAttribute('data'));
 var DATA = []
 var LABELS = []
 for (var i = 0; i < INPUT.length; i++){
     DATA.push(INPUT[i].fields['amount'])
-    LABELS.push(INPUT[i].fields['date_time'])
+    LABELS.push(date_format(INPUT[i].fields['date_time']))
 };
 
 var ID = "crt_monthly_loan_ost";
