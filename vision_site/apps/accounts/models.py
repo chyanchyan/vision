@@ -20,4 +20,3 @@ class UserProfile(models.Model):
     is_full_name_displayed = models.BooleanField(default=1)
     persona = models.ForeignKey(UserPersona, on_delete=models.SET_NULL, blank=1, null=1)
     interests = models.ManyToManyField(Interests, blank=True)
-

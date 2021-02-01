@@ -8,8 +8,9 @@ function date_format(date) {
   return date[0]
 }
 
-
 var INPUT = JSON.parse(document.currentScript.getAttribute('data'));
+
+console.log(INPUT)
 var DATA = []
 var LABELS = []
 for (var i = 0; i < INPUT.length; i++){

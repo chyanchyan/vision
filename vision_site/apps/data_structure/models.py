@@ -53,3 +53,12 @@ class Balance(models.Model):
     def __str__(self):
         return 'balance: %s' % str(self.date_time)
 
+
+class ExternalLink(models.Model):
+    add_datetime = models.DateTimeField(auto_created=True)
+    title = models.CharField(max_length=100)
+    link = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.title
+

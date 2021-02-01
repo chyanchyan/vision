@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+{% extends './_card_back_wrapper.html' %}
+{% load static %}
+
+{% block title %}
+    {{ widgets.ex_links_growth.title }}
+{% endblock title %}
+
+{% block div %}
+    <div class="chart-area">
+        <canvas id="{{ widgets.ex_links_growth.js_name }}"></canvas>
+    </div>
+{% endblock %}
+
+{% block comments %}
+    {{ widgets.ex_links_growth.comments }}
+{% endblock comments %}
+
+{% block js %}
+<!-- Page level plugins -->
+<script src="{% static 'themes/sb_admin_2/vendor/chart.js/Chart.min.js' %}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{% static 'js/line_chart.js' %}"
+        data="{{ widgets.ex_links_growth.data }}"
+        chart_id="{{ widgets.ex_links_growth.js_name }}">
+
+</script>
+
+{% endblock js %}

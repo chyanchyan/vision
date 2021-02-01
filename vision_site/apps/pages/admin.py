@@ -12,4 +12,3 @@ class PageAdmin(admin.ModelAdmin):
 
 admin.site.register(DataWidget)
 admin.site.register(Page)
-admin.site.register(ExternalLink)
