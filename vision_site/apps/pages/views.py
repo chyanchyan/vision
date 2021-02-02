@@ -1,9 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.forms.models import model_to_dict
 from .models import Page
-from django.core import serializers
+from django_pandas.io import read_frame
+
+# imports for exec
+import pandas as pd
+from pandas import DataFrame as dtf
+import numpy as np
+from collections import Counter
+from datetime import datetime as dt
 import json
-from django.db import connection as conn
+
 from ..data_structure.models import *
 
 
@@ -12,8 +19,9 @@ def page_view(req, page_name):
     pg = get_object_or_404(Page, permalink=page_name)
     widgets = model_to_dict(Page.objects.get(permalink=page_name))['widgets']
     widgets = {
-        widget.name:
+        widget.widget_id:
             {'data': py(widget.python_script),
+             'widget_id': widget.widget_id,
              'title': widget.title,
              'js_name': widget.js_name,
              'comments': widget.comments,
@@ -30,6 +38,13 @@ def page_view(req, page_name):
 
     # assert False
     return render(req, 'pages/page.html', context=context)
+
+
+def json_to_view(data):
+    s = data.to_json()
+    f = open('re.txt', 'w+')
+    f.write(s)
+    f.close()
 
 
 def py(script_str):

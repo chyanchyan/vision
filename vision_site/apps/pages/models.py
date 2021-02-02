@@ -1,17 +1,16 @@
 from django.db import models
-
 # Create your models here.
 
 
 class DataWidget(models.Model):
-    name = models.CharField(max_length=50, unique=True, null=True)
+    widget_id = models.CharField(max_length=50, unique=True, null=True)
     title = models.CharField(max_length=50, unique=True, null=True)
     js_name = models.CharField(max_length=1000, unique=True)
-    python_script = models.TextField(blank=True)
-    comments = models.TextField(blank=True)
+    python_script = models.TextField(blank=True, null=True)
+    comments = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.widget_id
 
 
 class Page(models.Model):
@@ -23,4 +22,6 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+
+
 

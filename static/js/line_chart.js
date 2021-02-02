@@ -1,53 +1,21 @@
+
 // Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito',
     '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-function date_format(date) {
-  date = (date + '').split('T')
-  return date[0]
-}
-
-console.log(document.currentScript.getAttribute('data'))
-
 var INPUT = JSON.parse(document.currentScript.getAttribute('data'));
-var ID = document.currentScript.getAttribute('chart_id');
-
+var ID = document.currentScript.getAttribute('widget_id');
+var DATE_FMT = 'YYYY-mm-dd'
 console.log(INPUT)
-
 var DATA = []
 var LABELS = []
-for (var key in INPUT){
-    DATA.push(INPUT[key]['amount'])
-    LABELS.push(date_format(INPUT[key]['date_time']))
+for (var key in INPUT['date_time']){
+    DATA.push(INPUT['amount'][key])
+    LABELS.push(msint_to_date(INPUT['date_time'][key], DATE_FMT))
 };
-
-
-function number_format(number, decimals, dec_point, thousands_sep) {
-  // *     example: number_format(1234.56, 2, ',', ' ');
-  // *     return: '1 234,56'
-  number = (number + '').replace(',', '').replace(' ', '');
-  var n = !isFinite(+number) ? 0 : +number,
-    prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-    sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
-    dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
-    s = '',
-    toFixedFix = function(n, prec) {
-      var k = Math.pow(10, prec);
-      return '' + Math.round(n * k) / k;
-    };
-  // Fix for IE parseFloat(0.55).toFixed(0) = 0;
-  s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-  if (s[0].length > 3) {
-    s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-  }
-  if ((s[1] || '').length < prec) {
-    s[1] = s[1] || '';
-    s[1] += new Array(prec - s[1].length + 1).join('0');
-  }
-  return s.join(dec);
-}
-
+console.log(DATA)
+console.log(LABELS)
 // Area Chart Example
 var ctx = document.getElementById(ID);
 var myLineChart = new Chart(ctx, {
@@ -86,8 +54,8 @@ var myLineChart = new Chart(ctx, {
           unit: 'date'
         },
         gridLines: {
-          display: false,
-          drawBorder: false
+          display: true,
+          drawBorder: true
         },
         ticks: {
           maxTicksLimit: 7
@@ -105,14 +73,14 @@ var myLineChart = new Chart(ctx, {
         gridLines: {
           color: "rgb(234, 236, 244)",
           zeroLineColor: "rgb(234, 236, 244)",
-          drawBorder: false,
+          drawBorder: true,
           borderDash: [2],
           zeroLineBorderDash: [2]
         }
       }],
     },
     legend: {
-      display: false
+      display: true
     },
     tooltips: {
       backgroundColor: "rgb(255,255,255)",
@@ -124,8 +92,8 @@ var myLineChart = new Chart(ctx, {
       borderWidth: 1,
       xPadding: 15,
       yPadding: 15,
-      displayColors: false,
-      intersect: false,
+      displayColors: true,
+      intersect: true,
       mode: 'index',
       caretPadding: 10,
       callbacks: {

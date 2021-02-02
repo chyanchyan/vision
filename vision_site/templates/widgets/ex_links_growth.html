@@ -9,7 +9,7 @@
 
 {% block div %}
     <div class="chart-area">
-        <canvas id="{{ widgets.ex_links_growth.js_name }}"></canvas>
+        <canvas id="{{ widgets.ex_links_growth.widget_id }}"></canvas>
     </div>
 {% endblock %}
 
@@ -22,9 +22,10 @@
 <script src="{% static 'themes/sb_admin_2/vendor/chart.js/Chart.min.js' %}"></script>
 
 <!-- Page level custom scripts -->
+<script src="{% static 'js/hfs.js' %}"></script>
 <script src="{% static 'js/line_chart.js' %}"
         data="{{ widgets.ex_links_growth.data }}"
-        chart_id="{{ widgets.ex_links_growth.js_name }}">
+        widget_id="{{ widgets.ex_links_growth.widget_id }}">
 
 </script>
 
