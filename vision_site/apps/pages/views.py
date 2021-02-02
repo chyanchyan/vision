@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.forms.models import model_to_dict
 from .models import Page
+from ..data_structure.models import ExternalLink
 from django_pandas.io import read_frame
 
 # imports for exec
@@ -33,7 +34,8 @@ def page_view(req, page_name):
         'content': pg.bodytext,
         'last_updated': pg.update_date,
         'page_list': Page.objects.all(),
-        'widgets': widgets
+        'widgets': widgets,
+        'external_links': ExternalLink.objects.all(),
     }
 
     # assert False
