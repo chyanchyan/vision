@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf.global_settings import AUTH_USER_MODEL
 
 
 class InsAlias(models.Model):
@@ -61,3 +62,11 @@ class ExternalLink(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Message(models.Model):
+    text = models.TextField()
+    owner = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE)
+
+    create_at = models.DateTimeField(auto_now_add=True)
+    update_at = models.DateTimeField(auto_now=True)

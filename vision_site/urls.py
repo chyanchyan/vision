@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vision_site.apps.pages.urls')),
     path('accounts/', include('vision_site.apps.accounts.urls')),
+    path('chat/', include('vision_site.apps.chat.urls')),
 ]

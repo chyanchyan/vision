@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
     {{ title }}
@@ -13,11 +14,35 @@
 
     <hr>
 
-    {% include '../widgets/ex_links_growth.html' %}
-
     <p>
         Page last updated: {{ last_updated|date:"D d F Y" }}
     </p>
 
+
+<p>
+    <a href="#" id="the-href">More</a>
+</p>
+<div>
+<ul id="the-list">
+    <li>1st</li>
+</ul>
+</div>
+<p>
+    hello <b><span id="person">abc</span></b> there
+</p>
+
+<p id="para">
+    spinner
+    <img id="spinner" src="{% static 'img/spinner.gif' %}" height="25">
+</p>
+<p>
+    <a href="#" id="tog">toggle spinner</a>
+    <a href="#" id="red">red</a>
+</p>
+
 {% endblock content %}
 
+{% block scripts %}
+<script src="{% static 'js/test_jquery_list_adding.js' %}"></script>
+
+{% endblock %}

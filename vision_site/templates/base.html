@@ -43,7 +43,7 @@
         </div>
 
         <!-- Bootstrap core JavaScript-->
-        <script src="{% static 'themes/sb_admin_2/vendor/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'jquery-3.3.1/jquery-3.3.1.min.js' %}"></script>
         <script src="{% static 'themes/sb_admin_2/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
         <!-- Core plugin JavaScript-->
@@ -51,6 +51,10 @@
 
         <!-- Custom scripts for all pages-->
         <script src="{% static 'themes/sb_admin_2/js/sb-admin-2.min.js' %}"></script>
+
+        {% block scripts %}
+        {% endblock scripts %}
+
     </div>
 </body>
 </html>

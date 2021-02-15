@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 # Create your models here.
 
 
@@ -7,6 +8,7 @@ class DataWidget(models.Model):
     title = models.CharField(max_length=50, unique=True, null=True)
     js_name = models.CharField(max_length=1000, unique=True)
     python_script = models.TextField(blank=True, null=True)
+    # python_script = forms.CharField(widget=forms.Textarea(attrs={'col': '40', 'row': '80'}))
     comments = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -17,7 +19,7 @@ class Page(models.Model):
     title = models.CharField(max_length=100)
     permalink = models.CharField(max_length=12, unique=True)
     update_date = models.DateTimeField('Last Updated')
-    bodytext = models.TextField('Page Content', blank=True)
+    bodytext = models.TextField('Page Content', blank=True, )
     widgets = models.ManyToManyField(DataWidget, blank=True)
 
     def __str__(self):

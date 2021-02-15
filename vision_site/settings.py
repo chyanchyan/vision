@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'vision_site.apps.pages',
     'vision_site.apps.accounts',
     'vision_site.apps.data_structure',
+    'vision_site.apps.chat',
 ]
 
 MIDDLEWARE = [
@@ -115,7 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

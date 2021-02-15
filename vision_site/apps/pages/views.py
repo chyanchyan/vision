@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.forms.models import model_to_dict
 from .models import Page
+from django.http.response import HttpResponse
 from ..data_structure.models import ExternalLink
 from django_pandas.io import read_frame
 
@@ -40,6 +41,14 @@ def page_view(req, page_name):
 
     # assert False
     return render(req, 'pages/page.html', context=context)
+
+
+def display_meta(request):
+    values = request.META.items()
+    html = []
+    for k, v in values:
+        html.append('<tr><td>%s</td><td>%s</td></tr>' % (k, v))
+    return HttpResponse('<table>%s</table>' % '\n'.join(html))
 
 
 def json_to_view(data):
